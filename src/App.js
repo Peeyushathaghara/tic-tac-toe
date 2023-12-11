@@ -26,17 +26,45 @@ import React from "react";
 // import Header from './components/Header';
 // import TodoItem from './components/TodoItem';
 // import AddItem from './components/AddItem';
-// import CounterComponent from './components/CounterComponent';
+import CounterComponent from './components/CounterComponent';
 // import "./style.css"
 
 // Tic Tac Toe imports
 
-import Board from './tic-tac-toe/Board'
+// import Board from './tic-tac-toe/Board'
+// import "./style.css"
+
+// api call
+// import { getPosts, getRandomUser } from './api/index.js'
+// import { useState , useEffect } from "react";
+// import PostCard from './components/PostCard';
+// import UserCard from './components/UserCard';
+
+//context api
+import { useContext } from "react";
+import { CounterContext } from './context/Counter'
+
 import "./style.css"
 
-
-
 const App = () => {
+
+  // const [data, setData] = useState(null);
+
+  // useEffect(() => {
+  //   getPosts().then(posts =>{
+  //     // console.log(posts);
+  //     setData(posts);
+  //   })
+  // }, [])
+
+  // useEffect(()=>{
+  //   getRandomUser().then((user)=>{console.log(user)})
+  // })
+
+  //context use
+
+  const counterState = useContext(CounterContext);
+  console.log("Context", counterState)
   return (
 
     // < div className="todo-container" >
@@ -51,9 +79,28 @@ const App = () => {
 
     // </div >
 
+    // <div className="App">
+    //   <Board />
+    // </div>
+
+    
+
     <div className="App">
-      <Board />
+      <h1>Count is {counterState.count}</h1>
+      <CounterComponent />
+      <CounterComponent />
+      <CounterComponent />
+      <CounterComponent />
+      {/* <UserCard />
+      {
+        data? (
+          data.map((e) =><PostCard title={e.title} body={e.body} />)
+        ): ( 
+        <p>No data</p>
+      )} */}
     </div>
+
+
   )
 
 
