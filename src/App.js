@@ -26,7 +26,7 @@ import React from "react";
 // import Header from './components/Header';
 // import TodoItem from './components/TodoItem';
 // import AddItem from './components/AddItem';
-import CounterComponent from './components/CounterComponent';
+// import CounterComponent from './components/CounterComponent';
 // import "./style.css"
 
 // Tic Tac Toe imports
@@ -41,8 +41,12 @@ import CounterComponent from './components/CounterComponent';
 // import UserCard from './components/UserCard';
 
 //context api
-import { useContext } from "react";
-import { CounterContext } from './context/Counter'
+// import { useContext } from "react";
+// import { CounterContext } from './context/Counter'
+
+//add to Cart
+import Item from './components/Item';
+import Cart from './components/Cart';
 
 import "./style.css"
 
@@ -63,8 +67,10 @@ const App = () => {
 
   //context use
 
-  const counterState = useContext(CounterContext);
-  console.log("Context", counterState)
+  // const counterState = useContext(CounterContext);
+  // console.log("Context", counterState)
+
+
   return (
 
     // < div className="todo-container" >
@@ -86,11 +92,17 @@ const App = () => {
     
 
     <div className="App">
-      <h1>Count is {counterState.count}</h1>
+
+      <Item name='macbook' price={100000} />
+      <Item name='pendrive' price={4000} />
+      <Item name='mobile' price={35000} />
+      <Cart />
+
+      {/* <h1>Count is {counterState.count}</h1>
       <CounterComponent />
       <CounterComponent />
       <CounterComponent />
-      <CounterComponent />
+      <CounterComponent /> */}
       {/* <UserCard />
       {
         data? (
